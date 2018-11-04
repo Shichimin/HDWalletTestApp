@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0EC83E16D71AE3B094775745 /* Pods_HDWalletTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F6506614019D69B8706601 /* Pods_HDWalletTestApp.framework */; };
 		54A3DD1DF4C5A9CC337E320D /* Pods_HDWalletTestAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF33DEE59888A10FDA14B284 /* Pods_HDWalletTestAppTests.framework */; };
+		5536CD26218EF982006D1067 /* CryptoAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5536CD25218EF982006D1067 /* CryptoAlgorithm.swift */; };
 		55C750E42153463900A8313A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C750E32153463900A8313A /* AppDelegate.swift */; };
 		55C750E62153463900A8313A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C750E52153463900A8313A /* ViewController.swift */; };
 		55C750E92153463900A8313A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C750E72153463900A8313A /* Main.storyboard */; };
@@ -40,6 +41,8 @@
 		0F01AFED4148C0244AF0CDCD /* Pods-HDWalletTestAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDWalletTestAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDWalletTestAppTests/Pods-HDWalletTestAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0F0CD9CBD4C2C70B301E9D5F /* Pods-HDWalletTestAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDWalletTestAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDWalletTestAppUITests/Pods-HDWalletTestAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		41F6506614019D69B8706601 /* Pods_HDWalletTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HDWalletTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5536CD25218EF982006D1067 /* CryptoAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAlgorithm.swift; sourceTree = "<group>"; };
+		5536CD27218EFAF3006D1067 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		55C750E02153463900A8313A /* HDWalletTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HDWalletTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C750E32153463900A8313A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55C750E52153463900A8313A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +108,7 @@
 		55C750D72153463900A8313A = {
 			isa = PBXGroup;
 			children = (
+				5536CD27218EFAF3006D1067 /* Bridging-Header.h */,
 				55C750E22153463900A8313A /* HDWalletTestApp */,
 				55C750F72153463A00A8313A /* HDWalletTestAppTests */,
 				55C751022153463A00A8313A /* HDWalletTestAppUITests */,
@@ -129,9 +133,10 @@
 			children = (
 				55C750E32153463900A8313A /* AppDelegate.swift */,
 				55C750E52153463900A8313A /* ViewController.swift */,
+				5536CD25218EF982006D1067 /* CryptoAlgorithm.swift */,
 				55C750E72153463900A8313A /* Main.storyboard */,
-				55C750EA2153463A00A8313A /* Assets.xcassets */,
 				55C750EC2153463A00A8313A /* LaunchScreen.storyboard */,
+				55C750EA2153463A00A8313A /* Assets.xcassets */,
 				55C750EF2153463A00A8313A /* Info.plist */,
 			);
 			path = HDWalletTestApp;
@@ -397,6 +402,7 @@
 			files = (
 				55C750E62153463900A8313A /* ViewController.swift in Sources */,
 				55C750E42153463900A8313A /* AppDelegate.swift in Sources */,
+				5536CD26218EF982006D1067 /* CryptoAlgorithm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +587,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yatuhasiumai.HDWalletTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PRODUCT)/Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -600,6 +607,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yatuhasiumai.HDWalletTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PRODUCT)/Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -35,29 +35,44 @@ class ViewController: UIViewController, UITextFieldDelegate {
         button.frame = CGRect(x: self.view.frame.width / 2 - 100, y: self.view.frame.height / 2 + 30, width: 200, height: 30)
         button.backgroundColor = UIColor.blue
         button.setTitle("Generate", for: .normal)
+        button.setBackgroundColor(.gray, for: .highlighted)
+        button.setTitle("Genereating", for: .highlighted)
         button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         self.view.addSubview(button)
     }
     
     @objc func buttonTapped(_ sender: UIButton) {
-        let seed = Mnemonic.createSeed(mnemonic: textfield.text!)
+        // Timer
+        let start = Date()
         
-        print("====↓16進数表記====")
+        // Stretching
+        var passphrase = textfield.text!
+        for _ in 1...10000 {
+            passphrase = passphrase.sha256()
+        }
+        
+        let elapsed = Date().timeIntervalSince(start)
+        print(elapsed)
+        
+        // Generate seed
+        let seed = Mnemonic.createSeed(mnemonic: passphrase)
+        
+        print("====Hexadecimal notation====")
         print(seed.toHexString())
         
         // Generate Wallet
         let wallet = Wallet(seed: seed, network: Network.main(.bitcoin))
         let account = wallet.generateAccount()
         
-        print("====公開鍵====")
+        print("====rawPublicKey====")
         print(account.rawPublicKey)
-        print("====ビットコインアドレス====")
+        print("====bitcoinAddress====")
         print(account.address)
-        print("====秘密鍵====")
+        print("====rawPrivateKey====")
         print(account.rawPrivateKey)
-        print("=====署名=====")
+        print("=====privateKey=====")
         print(account.privateKey)
-        
+    
 //        // HDWallet
 //        let privateKey = PrivateKey(seed: seed, network: Network.main(.bitcoin))
 //
@@ -74,5 +89,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //        let firstPrivateKey = change.derived(at: .notHardened(0))
     }
     
+}
+
+extension UIButton {
+    func setBackgroundColor(_ color: UIColor, for state: UIControl.State) {
+        let image = color.image
+        setBackgroundImage(image, for: state)
+    }
+}
+
+extension UIColor {
+    var image: UIImage? {
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+        UIGraphicsBeginImageContext(rect.size)
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return nil
+        }
+        context.setFillColor(self.cgColor)
+        context.fill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
 }
 
