@@ -60,8 +60,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         print(seed.toHexString())
         
         // Generate Hierarchical Deterministic
-        let privateKey = PrivateKey(seed: seed, network: Network.main(.bitcoin))
         // BIP44 key derivation
+        let privateKey = PrivateKey(seed: seed, network: Network.main(.bitcoin))
         // m/44'
         let child = privateKey.derived(at: .hardened(44))
         // m/44'/0'
