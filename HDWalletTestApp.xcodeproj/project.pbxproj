@@ -1,0 +1,736 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0EC83E16D71AE3B094775745 /* Pods_HDWalletTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F6506614019D69B8706601 /* Pods_HDWalletTestApp.framework */; };
+		54A3DD1DF4C5A9CC337E320D /* Pods_HDWalletTestAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF33DEE59888A10FDA14B284 /* Pods_HDWalletTestAppTests.framework */; };
+		55C750E42153463900A8313A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C750E32153463900A8313A /* AppDelegate.swift */; };
+		55C750E62153463900A8313A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C750E52153463900A8313A /* ViewController.swift */; };
+		55C750E92153463900A8313A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C750E72153463900A8313A /* Main.storyboard */; };
+		55C750EB2153463A00A8313A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C750EA2153463A00A8313A /* Assets.xcassets */; };
+		55C750EE2153463A00A8313A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C750EC2153463A00A8313A /* LaunchScreen.storyboard */; };
+		55C750F92153463A00A8313A /* HDWalletTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C750F82153463A00A8313A /* HDWalletTestAppTests.swift */; };
+		55C751042153463A00A8313A /* HDWalletTestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C751032153463A00A8313A /* HDWalletTestAppUITests.swift */; };
+		BEB031D2251CFA01012B08CC /* Pods_HDWalletTestAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6F0141AF1AEC0B5CFEA9A07 /* Pods_HDWalletTestAppUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		55C750F52153463A00A8313A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55C750D82153463900A8313A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55C750DF2153463900A8313A;
+			remoteInfo = HDWalletTestApp;
+		};
+		55C751002153463A00A8313A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55C750D82153463900A8313A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55C750DF2153463900A8313A;
+			remoteInfo = HDWalletTestApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0F01AFED4148C0244AF0CDCD /* Pods-HDWalletTestAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDWalletTestAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDWalletTestAppTests/Pods-HDWalletTestAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0F0CD9CBD4C2C70B301E9D5F /* Pods-HDWalletTestAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDWalletTestAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDWalletTestAppUITests/Pods-HDWalletTestAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		41F6506614019D69B8706601 /* Pods_HDWalletTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HDWalletTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55C750E02153463900A8313A /* HDWalletTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HDWalletTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55C750E32153463900A8313A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		55C750E52153463900A8313A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		55C750E82153463900A8313A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		55C750EA2153463A00A8313A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55C750ED2153463A00A8313A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		55C750EF2153463A00A8313A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55C750F42153463A00A8313A /* HDWalletTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HDWalletTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55C750F82153463A00A8313A /* HDWalletTestAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDWalletTestAppTests.swift; sourceTree = "<group>"; };
+		55C750FA2153463A00A8313A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55C750FF2153463A00A8313A /* HDWalletTestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HDWalletTestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55C751032153463A00A8313A /* HDWalletTestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDWalletTestAppUITests.swift; sourceTree = "<group>"; };
+		55C751052153463A00A8313A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		597EF122296698B7C30FE7DF /* Pods-HDWalletTestAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDWalletTestAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDWalletTestAppUITests/Pods-HDWalletTestAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7BFF9CFC695C89F96985B43B /* Pods-HDWalletTestAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDWalletTestAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDWalletTestAppTests/Pods-HDWalletTestAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		AF33DEE59888A10FDA14B284 /* Pods_HDWalletTestAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HDWalletTestAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6F0141AF1AEC0B5CFEA9A07 /* Pods_HDWalletTestAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HDWalletTestAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0452564A8756719F8F9F1FC /* Pods-HDWalletTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDWalletTestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDWalletTestApp/Pods-HDWalletTestApp.debug.xcconfig"; sourceTree = "<group>"; };
+		D6D46388715C87235BA793CB /* Pods-HDWalletTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDWalletTestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDWalletTestApp/Pods-HDWalletTestApp.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55C750DD2153463900A8313A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EC83E16D71AE3B094775745 /* Pods_HDWalletTestApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55C750F12153463A00A8313A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54A3DD1DF4C5A9CC337E320D /* Pods_HDWalletTestAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55C750FC2153463A00A8313A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEB031D2251CFA01012B08CC /* Pods_HDWalletTestAppUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		401713F0F5612508BEF8AB14 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D0452564A8756719F8F9F1FC /* Pods-HDWalletTestApp.debug.xcconfig */,
+				D6D46388715C87235BA793CB /* Pods-HDWalletTestApp.release.xcconfig */,
+				0F01AFED4148C0244AF0CDCD /* Pods-HDWalletTestAppTests.debug.xcconfig */,
+				7BFF9CFC695C89F96985B43B /* Pods-HDWalletTestAppTests.release.xcconfig */,
+				0F0CD9CBD4C2C70B301E9D5F /* Pods-HDWalletTestAppUITests.debug.xcconfig */,
+				597EF122296698B7C30FE7DF /* Pods-HDWalletTestAppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		55C750D72153463900A8313A = {
+			isa = PBXGroup;
+			children = (
+				55C750E22153463900A8313A /* HDWalletTestApp */,
+				55C750F72153463A00A8313A /* HDWalletTestAppTests */,
+				55C751022153463A00A8313A /* HDWalletTestAppUITests */,
+				55C750E12153463900A8313A /* Products */,
+				401713F0F5612508BEF8AB14 /* Pods */,
+				B2B69CE0B649F7E3459B191D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		55C750E12153463900A8313A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55C750E02153463900A8313A /* HDWalletTestApp.app */,
+				55C750F42153463A00A8313A /* HDWalletTestAppTests.xctest */,
+				55C750FF2153463A00A8313A /* HDWalletTestAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55C750E22153463900A8313A /* HDWalletTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				55C750E32153463900A8313A /* AppDelegate.swift */,
+				55C750E52153463900A8313A /* ViewController.swift */,
+				55C750E72153463900A8313A /* Main.storyboard */,
+				55C750EA2153463A00A8313A /* Assets.xcassets */,
+				55C750EC2153463A00A8313A /* LaunchScreen.storyboard */,
+				55C750EF2153463A00A8313A /* Info.plist */,
+			);
+			path = HDWalletTestApp;
+			sourceTree = "<group>";
+		};
+		55C750F72153463A00A8313A /* HDWalletTestAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				55C750F82153463A00A8313A /* HDWalletTestAppTests.swift */,
+				55C750FA2153463A00A8313A /* Info.plist */,
+			);
+			path = HDWalletTestAppTests;
+			sourceTree = "<group>";
+		};
+		55C751022153463A00A8313A /* HDWalletTestAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				55C751032153463A00A8313A /* HDWalletTestAppUITests.swift */,
+				55C751052153463A00A8313A /* Info.plist */,
+			);
+			path = HDWalletTestAppUITests;
+			sourceTree = "<group>";
+		};
+		B2B69CE0B649F7E3459B191D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41F6506614019D69B8706601 /* Pods_HDWalletTestApp.framework */,
+				AF33DEE59888A10FDA14B284 /* Pods_HDWalletTestAppTests.framework */,
+				B6F0141AF1AEC0B5CFEA9A07 /* Pods_HDWalletTestAppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55C750DF2153463900A8313A /* HDWalletTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55C751082153463A00A8313A /* Build configuration list for PBXNativeTarget "HDWalletTestApp" */;
+			buildPhases = (
+				6539CDA475A2F5481E640B5A /* [CP] Check Pods Manifest.lock */,
+				55C750DC2153463900A8313A /* Sources */,
+				55C750DD2153463900A8313A /* Frameworks */,
+				55C750DE2153463900A8313A /* Resources */,
+				2A1B99DF0A8B22792479CC63 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HDWalletTestApp;
+			productName = HDWalletTestApp;
+			productReference = 55C750E02153463900A8313A /* HDWalletTestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		55C750F32153463A00A8313A /* HDWalletTestAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55C7510B2153463A00A8313A /* Build configuration list for PBXNativeTarget "HDWalletTestAppTests" */;
+			buildPhases = (
+				03D1613EB4A8D52D86B283CE /* [CP] Check Pods Manifest.lock */,
+				55C750F02153463A00A8313A /* Sources */,
+				55C750F12153463A00A8313A /* Frameworks */,
+				55C750F22153463A00A8313A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55C750F62153463A00A8313A /* PBXTargetDependency */,
+			);
+			name = HDWalletTestAppTests;
+			productName = HDWalletTestAppTests;
+			productReference = 55C750F42153463A00A8313A /* HDWalletTestAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		55C750FE2153463A00A8313A /* HDWalletTestAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55C7510E2153463A00A8313A /* Build configuration list for PBXNativeTarget "HDWalletTestAppUITests" */;
+			buildPhases = (
+				E12394420AE1B9C07117F4C2 /* [CP] Check Pods Manifest.lock */,
+				55C750FB2153463A00A8313A /* Sources */,
+				55C750FC2153463A00A8313A /* Frameworks */,
+				55C750FD2153463A00A8313A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55C751012153463A00A8313A /* PBXTargetDependency */,
+			);
+			name = HDWalletTestAppUITests;
+			productName = HDWalletTestAppUITests;
+			productReference = 55C750FF2153463A00A8313A /* HDWalletTestAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55C750D82153463900A8313A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = yatuhasiumai;
+				TargetAttributes = {
+					55C750DF2153463900A8313A = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					55C750F32153463A00A8313A = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 55C750DF2153463900A8313A;
+					};
+					55C750FE2153463A00A8313A = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 55C750DF2153463900A8313A;
+					};
+				};
+			};
+			buildConfigurationList = 55C750DB2153463900A8313A /* Build configuration list for PBXProject "HDWalletTestApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55C750D72153463900A8313A;
+			productRefGroup = 55C750E12153463900A8313A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55C750DF2153463900A8313A /* HDWalletTestApp */,
+				55C750F32153463A00A8313A /* HDWalletTestAppTests */,
+				55C750FE2153463A00A8313A /* HDWalletTestAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55C750DE2153463900A8313A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55C750EE2153463A00A8313A /* LaunchScreen.storyboard in Resources */,
+				55C750EB2153463A00A8313A /* Assets.xcassets in Resources */,
+				55C750E92153463900A8313A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55C750F22153463A00A8313A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55C750FD2153463A00A8313A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03D1613EB4A8D52D86B283CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HDWalletTestAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A1B99DF0A8B22792479CC63 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HDWalletTestApp/Pods-HDWalletTestApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/scrypt/scrypt.framework",
+				"${BUILT_PRODUCTS_DIR}/secp256k1.swift/secp256k1.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/scrypt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HDWalletTestApp/Pods-HDWalletTestApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6539CDA475A2F5481E640B5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HDWalletTestApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E12394420AE1B9C07117F4C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HDWalletTestAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55C750DC2153463900A8313A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55C750E62153463900A8313A /* ViewController.swift in Sources */,
+				55C750E42153463900A8313A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55C750F02153463A00A8313A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55C750F92153463A00A8313A /* HDWalletTestAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55C750FB2153463A00A8313A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55C751042153463A00A8313A /* HDWalletTestAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		55C750F62153463A00A8313A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55C750DF2153463900A8313A /* HDWalletTestApp */;
+			targetProxy = 55C750F52153463A00A8313A /* PBXContainerItemProxy */;
+		};
+		55C751012153463A00A8313A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55C750DF2153463900A8313A /* HDWalletTestApp */;
+			targetProxy = 55C751002153463A00A8313A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		55C750E72153463900A8313A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55C750E82153463900A8313A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		55C750EC2153463A00A8313A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55C750ED2153463A00A8313A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		55C751062153463A00A8313A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		55C751072153463A00A8313A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55C751092153463A00A8313A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0452564A8756719F8F9F1FC /* Pods-HDWalletTestApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y57FK9P2R8;
+				INFOPLIST_FILE = HDWalletTestApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yatuhasiumai.HDWalletTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		55C7510A2153463A00A8313A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6D46388715C87235BA793CB /* Pods-HDWalletTestApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y57FK9P2R8;
+				INFOPLIST_FILE = HDWalletTestApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yatuhasiumai.HDWalletTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		55C7510C2153463A00A8313A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F01AFED4148C0244AF0CDCD /* Pods-HDWalletTestAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y57FK9P2R8;
+				INFOPLIST_FILE = HDWalletTestAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yatuhasiumai.HDWalletTestAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HDWalletTestApp.app/HDWalletTestApp";
+			};
+			name = Debug;
+		};
+		55C7510D2153463A00A8313A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BFF9CFC695C89F96985B43B /* Pods-HDWalletTestAppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y57FK9P2R8;
+				INFOPLIST_FILE = HDWalletTestAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yatuhasiumai.HDWalletTestAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HDWalletTestApp.app/HDWalletTestApp";
+			};
+			name = Release;
+		};
+		55C7510F2153463A00A8313A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F0CD9CBD4C2C70B301E9D5F /* Pods-HDWalletTestAppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y57FK9P2R8;
+				INFOPLIST_FILE = HDWalletTestAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yatuhasiumai.HDWalletTestAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HDWalletTestApp;
+			};
+			name = Debug;
+		};
+		55C751102153463A00A8313A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 597EF122296698B7C30FE7DF /* Pods-HDWalletTestAppUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y57FK9P2R8;
+				INFOPLIST_FILE = HDWalletTestAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yatuhasiumai.HDWalletTestAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HDWalletTestApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55C750DB2153463900A8313A /* Build configuration list for PBXProject "HDWalletTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55C751062153463A00A8313A /* Debug */,
+				55C751072153463A00A8313A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55C751082153463A00A8313A /* Build configuration list for PBXNativeTarget "HDWalletTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55C751092153463A00A8313A /* Debug */,
+				55C7510A2153463A00A8313A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55C7510B2153463A00A8313A /* Build configuration list for PBXNativeTarget "HDWalletTestAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55C7510C2153463A00A8313A /* Debug */,
+				55C7510D2153463A00A8313A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55C7510E2153463A00A8313A /* Build configuration list for PBXNativeTarget "HDWalletTestAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55C7510F2153463A00A8313A /* Debug */,
+				55C751102153463A00A8313A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 55C750D82153463900A8313A /* Project object */;
+}

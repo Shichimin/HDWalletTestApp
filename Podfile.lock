@@ -1,0 +1,29 @@
+PODS:
+  - CryptoSwift (0.11.0)
+  - HDWalletKit (0.1.2):
+    - CryptoSwift (~> 0.11)
+    - scrypt (~> 1.5)
+    - secp256k1.swift (~> 0.1.4)
+  - scrypt (1.7):
+    - CryptoSwift (~> 0.11)
+  - secp256k1.swift (0.1.4)
+
+DEPENDENCIES:
+  - HDWalletKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CryptoSwift
+    - HDWalletKit
+    - scrypt
+    - secp256k1.swift
+
+SPEC CHECKSUMS:
+  CryptoSwift: ad5208dd2aae0a764ea4ce2c2d34bd067cae67f0
+  HDWalletKit: 741d97551f5fcdcf6a394ce34c555024468aa2f2
+  scrypt: a828bd579086977f6db7f9798d1c6332ccaaed4e
+  secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
+
+PODFILE CHECKSUM: b1ed8a91e290a47d34b7071b7e168e4dbf9892eb
+
+COCOAPODS: 1.5.3
