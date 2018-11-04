@@ -59,7 +59,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         print("====Hexadecimal notation====")
         print(seed.toHexString())
         
-        // HDWallet
+        // Generate Hierarchical Deterministic
         let privateKey = PrivateKey(seed: seed, network: Network.main(.bitcoin))
         // BIP44 key derivation
         // m/44'
