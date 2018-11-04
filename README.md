@@ -1,2 +1,2 @@
 # HDWalletTestApp
-This is for practicing HD wallet creation.
+This App is for practicing HDWallet creation.

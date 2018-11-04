@@ -36,7 +36,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         button.backgroundColor = UIColor.blue
         button.setTitle("Generate", for: .normal)
         button.setBackgroundColor(.gray, for: .highlighted)
-        button.setTitle("Genereating", for: .highlighted)
+        button.setTitle("Genereating...", for: .highlighted)
         button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         self.view.addSubview(button)
     }
@@ -56,12 +56,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         // Generate seed
         let seed = Mnemonic.createSeed(mnemonic: passphrase)
-        
         print("====Hexadecimal notation====")
         print(seed.toHexString())
         
+        // HDWallet
+        let privateKey = PrivateKey(seed: seed, network: Network.main(.bitcoin))
+        // BIP44 key derivation
+        // m/44'
+        let child = privateKey.derived(at: .hardened(44))
+        // m/44'/0'
+        let grandchild = child.derived(at: .hardened(0))
+        // m/44'/0'/0'
+        let greatGrandchild = grandchild.derived(at: .hardened(0))
+        // m/44'/0'/0'/0
+        let greatGreatGrandchild = greatGrandchild.derived(at: .notHardened(0))
+        // m/44'/0'/0'/0/0
+        let firstPrivateKey = greatGreatGrandchild.derived(at: .notHardened(0))
+        
         // Generate Wallet
-        let wallet = Wallet(seed: seed, network: Network.main(.bitcoin))
+        let wallet = Wallet(seed: firstPrivateKey.chainCode, network: Network.main(.bitcoin))
         let account = wallet.generateAccount()
         
         print("====rawPublicKey====")
@@ -72,21 +85,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         print(account.rawPrivateKey)
         print("=====privateKey=====")
         print(account.privateKey)
-    
-//        // HDWallet
-//        let privateKey = PrivateKey(seed: seed, network: Network.main(.bitcoin))
-//
-//        // BIP44 key derivation
-//        // m/44'
-//        let purpose = privateKey.derived(at: .hardened(44))
-//        // m/44'/0'
-//        let coinType = purpose.derived(at: .hardened(0))
-//        // m/44'/0'/0'
-//        let account = coinType.derived(at: .hardened(0))
-//        // m/44'/0'/0'/0
-//        let change = account.derived(at: .notHardened(0))
-//        // m/44'/0'/0'/0/0
-//        let firstPrivateKey = change.derived(at: .notHardened(0))
     }
     
 }
