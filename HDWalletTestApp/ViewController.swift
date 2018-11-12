@@ -59,34 +59,46 @@ class ViewController: UIViewController, UITextFieldDelegate {
         print("====Hexadecimal notation====")
         print(seed.toHexString())
         
-        // Generate Hierarchical Deterministic
-        // BIP44 key derivation
-        let privateKey = PrivateKey(seed: seed, network: Network.main(.bitcoin))
-        // m/44'
-        let child = privateKey.derived(at: .hardened(44))
-        // m/44'/0'
-        let grandchild = child.derived(at: .hardened(0))
-        // m/44'/0'/0'
-        let greatGrandchild = grandchild.derived(at: .hardened(0))
-        // m/44'/0'/0'/0
-        let greatGreatGrandchild = greatGrandchild.derived(at: .notHardened(0))
-        // m/44'/0'/0'/0/0
-        let firstPrivateKey = greatGreatGrandchild.derived(at: .notHardened(0))
+//        // Generate Hierarchical Deterministic
+//        // BIP44 key derivation
+//        let privateKey = PrivateKey(seed: seed, network: Network.main(.bitcoin))
+//        // m/44'
+//        let purpose = privateKey.derived(at: .hardened(44))
+//        // m/44'/0'
+//        let coinType = purpose.derived(at: .hardened(0))
+//        // m/44'/0'/0'
+//        let account = coinType.derived(at: .hardened(0))
+//        // m/44'/0'/0'/0
+//        let change = account.derived(at: .notHardened(0))
+//        // m/44'/0'/0'/0/0
+//        let firstPrivateKey = change.derived(at: .notHardened(0))
+//
+//        // Generate Wallet
+//        let wallet = Wallet(seed: firstPrivateKey.chainCode, network: Network.main(.bitcoin))
+//        let myAccount = wallet.generateAccount()
+//
+//        print("====rawPublicKey====")
+//        print(myAccount.rawPublicKey)
+//        print("====bitcoinAddress====")
+//        print(myAccount.address)
+//        print("====rawPrivateKey====")
+//        print(myAccount.rawPrivateKey)
+//        print("=====privateKey=====")
+//        print(myAccount.privateKey)
         
-        // Generate Wallet
-        let wallet = Wallet(seed: firstPrivateKey.chainCode, network: Network.main(.bitcoin))
-        let account = wallet.generateAccount()
+        // Gnerate Wallet (passphrase to Wallet)
+        let wallet = Wallet(seed: seed, network: Network.main(.bitcoin))
+        let myAccount = wallet.generateAccount()
         
         print("====rawPublicKey====")
-        print(account.rawPublicKey)
+        print(myAccount.rawPublicKey)
         print("====bitcoinAddress====")
-        print(account.address)
+        print(myAccount.address)
         print("====rawPrivateKey====")
-        print(account.rawPrivateKey)
+        print(myAccount.rawPrivateKey)
         print("=====privateKey=====")
-        print(account.privateKey)
+        print(myAccount.privateKey)
     }
-    
 }
 
 extension UIButton {
