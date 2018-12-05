@@ -32,6 +32,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // Button
     var button: UIButton!
     
+    // counter
+    var walletNumer: Int = 0
+    
     // Lists
     let usersList: [String] = ["ユーザA", "ユーザB", "ユーザC", "ユーザD", "ユーザE"]
     var walletsList: [wallet] = []
@@ -82,7 +85,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         amountOfRemittanceTextField.borderStyle = .roundedRect
         amountOfRemittanceTextField.clearButtonMode = .whileEditing
         amountOfRemittanceTextField.returnKeyType = .done
-        amountOfRemittanceTextField.font = UIFont.systemFont(ofSize: 30.0)
+        amountOfRemittanceTextField.font = UIFont.systemFont(ofSize: 35.0)
+        amountOfRemittanceTextField.text = "0.00"
         self.view.addSubview(amountOfRemittanceTextField)
         
         // BTC表示ラベル1
@@ -263,6 +267,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         print("=====privateKey=====")
         print(myAccount.privateKey)
         
+        // 送金
+        moneyTransfer()
+        
+        // アラートの表示
+        let sucseedAlertController = UIAlertController(title: "送金完了", message: "送金が完了しました", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
+        }
+        sucseedAlertController.addAction(okAction)
+        present(sucseedAlertController, animated: true, completion: nil)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -272,6 +285,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    // 送金処理
+    func moneyTransfer() {
+        let num = Float(amountOfRemittanceTextField.text!)
+        walletsList[self.walletNumer].amount = walletsList[self.walletNumer].amount - num!
+        balanveNumLabel.text = NSString(format: "%.2f", walletsList[self.walletNumer].amount) as String
     }
 }
 
@@ -325,6 +345,7 @@ extension ViewController: UIPickerViewDataSource {
             return "\(usersList[row])"
             
         case pickers[1]:
+            self.walletNumer = row
             return "\(walletsList[row].name!)"
 
         case let invalid:
