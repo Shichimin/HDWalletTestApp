@@ -129,7 +129,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // パスワード表示用ラベル
         passwordLabel = UILabel()
         passwordLabel.frame = CGRect(x: 40, y: 0, width: 700, height: 70)
-        passwordLabel.center.y = self.view.center.y + 140
+        passwordLabel.center.y = self.view.center.y + 80
         passwordLabel.text = "パスワード："
         passwordLabel.font = UIFont.systemFont(ofSize: 35.0)
         self.view.addSubview(passwordLabel)
@@ -218,7 +218,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             // Stretching
             var passphrase = self.inputPasswordTextField.text!
-            for _ in 1...10000 {
+            for _ in 1...30000 {
                 passphrase = passphrase.sha256()
             }
             
@@ -229,33 +229,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let seed = Mnemonic.createSeed(mnemonic: passphrase)
             print("====Hexadecimal notation====")
             print(seed.toHexString())
-            
-            //        // Generate Hierarchical Deterministic
-            //        // BIP44 key derivation
-            //        let privateKey = PrivateKey(seed: seed, network: Network.main(.bitcoin))
-            //        // m/44'
-            //        let purpose = privateKey.derived(at: .hardened(44))
-            //        // m/44'/0'
-            //        let coinType = purpose.derived(at: .hardened(0))
-            //        // m/44'/0'/0'
-            //        let account = coinType.derived(at: .hardened(0))
-            //        // m/44'/0'/0'/0
-            //        let change = account.derived(at: .notHardened(0))
-            //        // m/44'/0'/0'/0/0
-            //        let firstPrivateKey = change.derived(at: .notHardened(0))
-            //
-            //        // Generate Wallet
-            //        let wallet = Wallet(seed: firstPrivateKey.chainCode, network: Network.main(.bitcoin))
-            //        let myAccount = wallet.generateAccount()
-            //
-            //        print("====rawPublicKey====")
-            //        print(myAccount.rawPublicKey)
-            //        print("====bitcoinAddress====")
-            //        print(myAccount.address)
-            //        print("====rawPrivateKey====")
-            //        print(myAccount.rawPrivateKey)
-            //        print("=====privateKey=====")
-            //        print(myAccount.privateKey)
             
             // Gnerate Wallet (passphrase to Wallet)
             let wallet = Wallet(seed: seed, network: Network.main(.bitcoin))
