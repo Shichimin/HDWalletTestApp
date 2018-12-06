@@ -53,7 +53,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // walletsListの初期化
-        walletsList = [wallet(name: "ウォレット1", amount: 2.00), wallet(name: "ウォレット2", amount: 2.50), wallet(name: "ウォレット3", amount: 1.50)]
+        walletsList = [wallet(name: "ウォレット1", amount: 2.00, password: "hoge1"),
+                       wallet(name: "ウォレット2", amount: 2.50, password: "hoge2"),
+                       wallet(name: "ウォレット3", amount: 1.50, password: "hoge3")]
         
         // PickerView
         pickers.forEach({
@@ -112,7 +114,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         // 残高数
         balanveNumLabel = UILabel()
-        balanveNumLabel.text = "2.00"
+        balanveNumLabel.text = "0.00"
         balanveNumLabel.frame = CGRect(x: 570, y: 490, width: 350, height: 70)
         balanveNumLabel.font = UIFont.systemFont(ofSize: 35.0)
         self.view.addSubview(balanveNumLabel)
@@ -144,7 +146,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         pickerViewDestinationTextField.center.x = self.view.center.x
         pickerViewDestinationTextField.center.y = destinationUserLabel.layer.position.y + 80
         pickerViewDestinationTextField.inputView = pickers[0]
-        pickerViewDestinationTextField.text = "ユーザA"
+        pickerViewDestinationTextField.text = "宛先ユーザ選択"
         pickerViewDestinationTextField.textAlignment = .center
         pickerViewDestinationTextField.font = UIFont.systemFont(ofSize: 50.0)
         pickerViewDestinationTextField.backgroundColor = UIColor.gray
@@ -162,7 +164,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         pickerViewWalletTextField.center.x = self.view.center.x
         pickerViewWalletTextField.center.y = walletLabel.layer.position.y + 80
         pickerViewWalletTextField.inputView = pickers[1]
-        pickerViewWalletTextField.text = "ウォレット1"
+        pickerViewWalletTextField.text = "使用ウォレット選択"
         pickerViewWalletTextField.textAlignment = .center
         pickerViewWalletTextField.font = UIFont.systemFont(ofSize: 50.0)
         pickerViewWalletTextField.backgroundColor = UIColor.gray
@@ -210,72 +212,80 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func buttonTapped(_ sender: UIButton) {
-        // Timer
-        let start = Date()
-        
-        // Stretching
-        var passphrase = inputPasswordTextField.text!
-        for _ in 1...10000 {
-            passphrase = passphrase.sha256()
+        if walletsList[walletNumer].password == inputPasswordTextField.text {
+            // Timer
+            let start = Date()
+            
+            // Stretching
+            var passphrase = self.inputPasswordTextField.text!
+            for _ in 1...10000 {
+                passphrase = passphrase.sha256()
+            }
+            
+            let elapsed = Date().timeIntervalSince(start)
+            print(elapsed)
+            
+            // Generate seed
+            let seed = Mnemonic.createSeed(mnemonic: passphrase)
+            print("====Hexadecimal notation====")
+            print(seed.toHexString())
+            
+            //        // Generate Hierarchical Deterministic
+            //        // BIP44 key derivation
+            //        let privateKey = PrivateKey(seed: seed, network: Network.main(.bitcoin))
+            //        // m/44'
+            //        let purpose = privateKey.derived(at: .hardened(44))
+            //        // m/44'/0'
+            //        let coinType = purpose.derived(at: .hardened(0))
+            //        // m/44'/0'/0'
+            //        let account = coinType.derived(at: .hardened(0))
+            //        // m/44'/0'/0'/0
+            //        let change = account.derived(at: .notHardened(0))
+            //        // m/44'/0'/0'/0/0
+            //        let firstPrivateKey = change.derived(at: .notHardened(0))
+            //
+            //        // Generate Wallet
+            //        let wallet = Wallet(seed: firstPrivateKey.chainCode, network: Network.main(.bitcoin))
+            //        let myAccount = wallet.generateAccount()
+            //
+            //        print("====rawPublicKey====")
+            //        print(myAccount.rawPublicKey)
+            //        print("====bitcoinAddress====")
+            //        print(myAccount.address)
+            //        print("====rawPrivateKey====")
+            //        print(myAccount.rawPrivateKey)
+            //        print("=====privateKey=====")
+            //        print(myAccount.privateKey)
+            
+            // Gnerate Wallet (passphrase to Wallet)
+            let wallet = Wallet(seed: seed, network: Network.main(.bitcoin))
+            let myAccount = wallet.generateAccount()
+            
+            print("====rawPublicKey====")
+            print(myAccount.rawPublicKey)
+            print("====bitcoinAddress====")
+            print(myAccount.address)
+            print("====rawPrivateKey====")
+            print(myAccount.rawPrivateKey)
+            print("=====privateKey=====")
+            print(myAccount.privateKey)
+            
+            // 送金
+            self.moneyTransfer()
+            
+            // 送金終了アラートの表示
+            let sucseedAlertController = UIAlertController(title: "送金完了", message: "送金が完了しました", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
+            }
+            sucseedAlertController.addAction(okAction)
+            self.present(sucseedAlertController, animated: true, completion: nil)
+        } else {
+            let nonconformingAlert = UIAlertController(title: "送金エラー", message: "パスワードが違います", preferredStyle: .alert)
+            let nonconformingOKAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
+            }
+            nonconformingAlert.addAction(nonconformingOKAction)
+            present(nonconformingAlert, animated: true, completion: nil)
         }
-        
-        let elapsed = Date().timeIntervalSince(start)
-        print(elapsed)
-        
-        // Generate seed
-        let seed = Mnemonic.createSeed(mnemonic: passphrase)
-        print("====Hexadecimal notation====")
-        print(seed.toHexString())
-        
-//        // Generate Hierarchical Deterministic
-//        // BIP44 key derivation
-//        let privateKey = PrivateKey(seed: seed, network: Network.main(.bitcoin))
-//        // m/44'
-//        let purpose = privateKey.derived(at: .hardened(44))
-//        // m/44'/0'
-//        let coinType = purpose.derived(at: .hardened(0))
-//        // m/44'/0'/0'
-//        let account = coinType.derived(at: .hardened(0))
-//        // m/44'/0'/0'/0
-//        let change = account.derived(at: .notHardened(0))
-//        // m/44'/0'/0'/0/0
-//        let firstPrivateKey = change.derived(at: .notHardened(0))
-//
-//        // Generate Wallet
-//        let wallet = Wallet(seed: firstPrivateKey.chainCode, network: Network.main(.bitcoin))
-//        let myAccount = wallet.generateAccount()
-//
-//        print("====rawPublicKey====")
-//        print(myAccount.rawPublicKey)
-//        print("====bitcoinAddress====")
-//        print(myAccount.address)
-//        print("====rawPrivateKey====")
-//        print(myAccount.rawPrivateKey)
-//        print("=====privateKey=====")
-//        print(myAccount.privateKey)
-        
-        // Gnerate Wallet (passphrase to Wallet)
-        let wallet = Wallet(seed: seed, network: Network.main(.bitcoin))
-        let myAccount = wallet.generateAccount()
-        
-        print("====rawPublicKey====")
-        print(myAccount.rawPublicKey)
-        print("====bitcoinAddress====")
-        print(myAccount.address)
-        print("====rawPrivateKey====")
-        print(myAccount.rawPrivateKey)
-        print("=====privateKey=====")
-        print(myAccount.privateKey)
-        
-        // 送金
-        moneyTransfer()
-        
-        // アラートの表示
-        let sucseedAlertController = UIAlertController(title: "送金完了", message: "送金が完了しました", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
-        }
-        sucseedAlertController.addAction(okAction)
-        present(sucseedAlertController, animated: true, completion: nil)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -292,6 +302,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let num = Float(amountOfRemittanceTextField.text!)
         walletsList[self.walletNumer].amount = walletsList[self.walletNumer].amount - num!
         balanveNumLabel.text = NSString(format: "%.2f", walletsList[self.walletNumer].amount) as String
+        amountOfRemittanceTextField.text = "0.00"
+        inputPasswordTextField.text = ""
     }
 }
 

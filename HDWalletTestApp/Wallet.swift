@@ -11,9 +11,11 @@ import Foundation
 class wallet {
     let name: String!
     var amount: Float!
+    let password: String!
     
-    init(name: String, amount: Float) {
+    init(name: String, amount: Float, password: String) {
         self.name = name
         self.amount = amount
+        self.password = password
     }
 }
